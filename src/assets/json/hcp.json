@@ -1,0 +1,297 @@
+{
+  "role": [
+    {
+      "roleId": 2,
+      "name": "Doctor"
+    },
+    {
+      "roleId": 3,
+      "name": "Pharma Company"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Assistant Manager"
+    },
+    {
+      "id": 2,
+      "name": "Brand Manager"
+    },
+    {
+      "id": 3,
+      "name": "CEO"
+    },
+    {
+      "id": 4,
+      "name": "CMR Head"
+    },
+    {
+      "id": 5,
+      "name": "Director"
+    },
+    {
+      "id": 6,
+      "name": "Director of Sales"
+    },
+    {
+      "id": 7,
+      "name": "Division Head"
+    },
+    {
+      "id": 8,
+      "name": "Group Product Manager"
+    },
+    {
+      "id": 9,
+      "name": "Manager"
+    },
+    {
+      "id": 10,
+      "name": "Manager, Medical Affairs"
+    },
+    {
+      "id": 11,
+      "name": "Marketing Manager"
+    },
+    {
+      "id": 12,
+      "name": "Medical Advisor"
+    },
+    {
+      "id": 13,
+      "name": "National Sales Manager"
+    },
+    {
+      "id": 14,
+      "name": "Other"
+    },
+    {
+      "id": 15,
+      "name": "President"
+    },
+    {
+      "id": 16,
+      "name": "Product Executive"
+    },
+    {
+      "id": 17,
+      "name": "Product Manager"
+    },
+    {
+      "id": 18,
+      "name": "Product Specialists"
+    },
+    {
+      "id": 19,
+      "name": "Regional Commercial Excellence Manager"
+    },
+    {
+      "id": 20,
+      "name": "Regional Manager"
+    },
+    {
+      "id": 21,
+      "name": "Regional Marketing Manager"
+    },
+    {
+      "id": 22,
+      "name": "Regional Product Manager"
+    },
+    {
+      "id": 23,
+      "name": "Regional Product Specialist"
+    },
+    {
+      "id": 24,
+      "name": "Head of Marketing"
+    },
+    {
+      "id": 25,
+      "name": "Regional Sales Manager"
+    },
+    {
+      "id": 26,
+      "name": "Sales Manager"
+    },
+    {
+      "id": 27,
+      "name": "Senior Brand Manager"
+    },
+    {
+      "id": 28,
+      "name": "Senior Marketing Manager"
+    },
+    {
+      "id": 29,
+      "name": "Senior Sales Manager"
+    },
+    {
+      "id": 30,
+      "name": "Vice President"
+    }
+
+  ],
+  "speciality": [
+    {
+      "id": 1,
+      "name": "Allergists/Immunologist"
+    },
+    {
+      "id": 2,
+      "name": "Anesthesiologist"
+    },
+    {
+      "id": 3,
+      "name": "Cardiologist"
+    },
+    {
+      "id": 4,
+      "name": "Colon and Rectal Surgeon"
+    },
+    {
+      "id": 5,
+      "name": "Consultant Physician"
+    },
+    {
+      "id": 6,
+      "name": "Critical Care Medicine Specialist"
+    },
+    {
+      "id": 7,
+      "name": "Dermatologist"
+    },
+    {
+      "id": 8,
+      "name": "Endocrinologist"
+    },
+    {
+      "id": 9,
+      "name": "Emergency Medicine Specialist"
+    },
+    {
+      "id": 10,
+      "name": "ENT Specialist"
+    },
+    {
+      "id": 11,
+      "name": "Family Physician"
+    },
+    {
+      "id": 12,
+      "name": "Gastroenterologist"
+    },
+    {
+      "id": 13,
+      "name": "General Physician"
+    },
+    {
+      "id": 14,
+      "name": "General Surgeon"
+    },
+    {
+      "id": 15,
+      "name": "Geriatric Medicine Specialist"
+    },
+    {
+      "id": 16,
+      "name": "Hematologist"
+    },
+    {
+      "id": 17,
+      "name": "Infectious Disease Specialist"
+    },
+    {
+      "id": 18,
+      "name": "Interventional Cardiologist"
+    },
+    {
+      "id": 19,
+      "name": "Nephrologist"
+    },
+    {
+      "id": 20,
+      "name": "Neurologist"
+    },
+    {
+      "id": 21,
+      "name": "Obstetricians and Gynecologist"
+    },
+    {
+      "id": 22,
+      "name": "Oncologist"
+    },
+    {
+      "id": 23,
+      "name": "Ophthalmologist"
+    },
+    {
+      "id": 24,
+      "name": "Orthopedic surgeon"
+    },
+    {
+      "id": 25,
+      "name": "Osteopath"
+    },
+    {
+      "id": 26,
+      "name": "Otolaryngologist"
+    },
+    {
+      "id": 27,
+      "name": "Pathologist"
+    },
+    {
+      "id": 28,
+      "name": "Pediatrician"
+    },
+    {
+      "id": 29,
+      "name": "Physiatrist"
+    },
+    {
+      "id": 30,
+      "name": "Plastic Surgeon"
+    },
+    {
+      "id": 31,
+      "name": "Podiatrist"
+    },
+    {
+      "id": 32,
+      "name": "Preventive Medicine Specialist"
+    },
+    {
+      "id": 33,
+      "name": "Psychiatrist"
+    },
+    {
+      "id": 34,
+      "name": "Pulmonologist"
+    },
+    {
+      "id": 35,
+      "name": "Radiologist"
+    },
+    {
+      "id":36,
+      "name": "Rheumatologist"
+    },
+    {
+      "id": 37,
+      "name": "Sleep medicine specialist"
+    },
+    {
+      "id": 38,
+      "name": "Sports medicine specialist"
+    },
+    {
+      "id": 39,
+      "name": "General Surgeon"
+    },
+    {
+      "id": 40,
+      "name": "Urologist"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<div class="container-fluid" *ngIf="showComponent">
+  <div class="row">
+    <div class="col-md-12">
+      <div role="form" [formGroup]="userFormGroup">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Old Password</label>
+            <input formControlName="oldPassword" type="password" class="form-control" id="exampleInputEmail1" placeholder="Old Password">
+            <span id="exampleInputEmail1-error" *ngIf="userFormGroup.controls.oldPassword.errors" class="error error-input">{{userFormGroup.controls.oldPassword["errorMessage"]}}</span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">New Password</label>
+            <input formControlName="newPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+            <span id="exampleInputEmail1-error" *ngIf="userFormGroup.controls.newPassword.errors" class="error error-input">{{userFormGroup.controls.newPassword["errorMessage"]}}</span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input formControlName="confirmPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+            <span id="exampleInputEmail1-error" *ngIf="userFormGroup.controls.confirmPassword.errors" class="error error-input">{{userFormGroup.controls.confirmPassword["errorMessage"]}}</span>
+          </div>
+          <button type="button" (click)="changePassword()" class="btn warning"style="height:47%;width:47%">Submit</button>
+          <button type="button" (click)="close()" class="btn danger"style="float: right;height:47%;width:47%">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

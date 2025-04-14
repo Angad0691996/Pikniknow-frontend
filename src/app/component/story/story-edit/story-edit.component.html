@@ -1,0 +1,104 @@
+<div class="container-fluid" *ngIf="showComponent">
+  <!-- SELECT2 EXAMPLE -->
+  <div class="card card-default">
+    <div class="card-header">
+      <h3 class="card-title">Edit Story</h3>
+      <div class="card-tools">
+        <button type="button" (click)="editStory()" class="btn warning">Save</button>
+        <button type="button" routerLink="/story" class="btn danger">Cancel</button>
+      </div>
+    </div>
+    <div class="card-body" [formGroup]="storyEditForm">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input type="text" formControlName="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+            <span id="exampleInputEmail1-error" *ngIf="storyEditForm.controls.title.errors" class="error error-input">{{storyEditForm.controls.title["errorMessage"]}}</span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Location  Name</label>
+            <input type="text" formControlName="locationName" class="form-control" id="exampleInputEmail1" placeholder="Location  Name">
+            <span id="exampleInputEmail1-error" *ngIf="storyEditForm.controls.locationName.errors" class="error error-input">{{storyEditForm.controls.locationName["errorMessage"]}}</span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Postal Code</label>
+            <input type="text" formControlName="postalCode" class="form-control" id="exampleInputEmail1" placeholder="Postal Code">
+            <span id="exampleInputEmail1-error" *ngIf="storyEditForm.controls.postalCode.errors" class="error error-input">{{storyEditForm.controls.postalCode["errorMessage"]}}</span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Status</label>
+            <select class="form-control select2" formControlName="statusId" style="width: 100%;">
+              <option value="9">Approved</option>
+              <option value="10">Rejected</option>
+              <option value="11">Pending</option>
+            </select>
+            <span id="exampleInputEmail1-error" *ngIf="storyEditForm.controls.statusId.errors" class="error error-input">{{storyEditForm.controls.statusId["errorMessage"]}}</span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Spot Info</label>
+            <textarea formControlName="spotInformation" class="textarea" placeholder="Spot Info" rows="3"
+                      style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            <span id="exampleInputEmail1-error" *ngIf="storyEditForm.controls.spotInformation.errors" class="error error-input">{{storyEditForm.controls.spotInformation["errorMessage"]}}</span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputEmail1">How to get there?</label>
+            <textarea formControlName="metaDescription" class="textarea" placeholder="How to get there?" rows="3"
+                      style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            <span id="exampleInputEmail1-error" *ngIf="storyEditForm.controls.metaDescription.errors" class="error error-input">{{storyEditForm.controls.metaDescription["errorMessage"]}}</span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <!-- The time line -->
+          <div class="timeline">
+            <div>
+              <div class="timeline-item">
+                <h3 class="timeline-header">Media</h3>
+                <div class="timeline-body">
+                  <div class="row">
+                    <div class="col-2" *ngFor="let item of storyMedia;let i = index">
+                      <img *ngIf="item.fileTypeId==6" class="img-story" src="https://travel-app-media.s3.ap-south-1.amazonaws.com/{{item.filePath}}" alt="...">
+                      <video class="img-story" src="https://travel-app-media.s3.ap-south-1.amazonaws.com/{{item.filePath}}" *ngIf="item.fileTypeId==7" height="200" controls></video> <br />
+                      <i class="fa fa-trash" (click)="removeMedia(i)"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <mat-form-field class="col-md-12">
+            <mat-chip-list #chipList aria-label="Tags">
+              <mat-chip *ngFor="let tag of storyTag;let i = index" [selectable]="selectable"
+                        [removable]="removable" (removed)="removeTags(i)">
+                {{getTagName(tag.tagId)}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Tags"
+                     [disabled]="true"
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

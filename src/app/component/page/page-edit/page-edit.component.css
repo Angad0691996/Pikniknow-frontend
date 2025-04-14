@@ -1,0 +1,27 @@
+.warning {
+    background: #40c057;
+    color: white;
+  }
+  .warning:hover {
+    border-color: #40c057;
+    color: #40c057;
+    background-color:#e0fbda;
+  }
+  .danger:hover {
+    border-color: #f44336;
+    color: red;
+    background-color:#fee8dc;
+  }
+  
+  .danger {
+    background: #f44336;
+    color: white;
+  }
+  .btn {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    font-weight: bold;
+    line-height: 1.5;
+    cursor: pointer;
+    margin: 0 0.3em
+  }

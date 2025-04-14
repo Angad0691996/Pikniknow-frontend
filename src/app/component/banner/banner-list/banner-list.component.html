@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Banners({{bannerList?.length}})</h3>
+        <div class="card-tools">
+          <i class="fas fa-plus" routerLink="/banner/add"  data-bs-toggle="tooltip" data-bs-placement="top" title="Add New Banner"></i>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Order</th>
+              <th class="project-actions text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of bannerList">
+              <td>{{item.name}}</td>
+              <td>{{item.metaDescription | slice:0:80}}</td>
+              <td>{{item.orderId}}</td>
+              <td class="project-actions text-right">
+                <a class="btn info" routerLink="/banner/{{item.bannerId}}" href="javascript:void()">
+                  Edit
+                </a>
+                <a class="btn danger" (click)="showPopup(item,'Banner Deleted')" href="javascript:void()">
+                  Delete
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>

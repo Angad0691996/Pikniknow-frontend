@@ -1,0 +1,91 @@
+.table{
+  font-size:larger;
+}
+.success:hover {
+  background-color: #40c057;
+  color: #fff;;
+}
+.success {
+  border-color: #40c057;
+  color: #40c057;
+  background-color:#e0fbda;
+}
+.info {
+  border-color: #2f8be6;
+  color: #2f8be6;
+  background-color:#d5f1fd;
+}
+
+.info:hover {
+  background: #2f8be6;
+  color: white;
+}
+.warning:hover {
+  background: #40c057;
+  color: white;
+}
+.warning {
+  border-color: #40c057;
+  color: #40c057;
+  background-color:#e0fbda;
+}
+.danger {
+  border-color: #f44336;
+  color: red;
+  background-color:#fee8dc;
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+.btn {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  cursor: pointer;
+  margin: 0 0.3em
+}
+.fa-plus{
+  color: #2f8be6;
+  cursor: pointer;
+  font-size: 25px;
+}
+.table{
+  font-size: medium;
+}
+.box-body {
+  overflow-y: auto;
+  height: 500px;
+}
+.box-body thead th {
+  position: sticky;
+  top: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}

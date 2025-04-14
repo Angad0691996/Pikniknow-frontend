@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\component",
+    "\\src\\app\\component\\authentication\\login",
+    "\\src\\app\\component\\shared\\side-bar"
+  ],
+  "SelectedNode": "\\src\\app\\component\\authentication",
+  "PreviewInSolutionExplorer": false
+}

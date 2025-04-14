@@ -1,0 +1,18 @@
+<div class="card">
+    <table  class="table table-striped projects">
+      <thead>
+        <tr>
+          <th style="width: 70%">
+            Are you sure want to delete this Banner
+          </th>
+        </tr>
+      </thead>
+      <h3 style="margin: 0.5em 1em;">{{Banner.bannerName}}</h3>
+    <div style="display: flex;
+    justify-content: flex-end;
+    margin: 0.5em 1em;"> 
+    <button type="button" (click)="deleteBanner(bannerId)" href="javascript:void()"class="btn warning">Confirm</button>
+    <button type="button"(click)="close()"class="btn danger">Cancel</button>
+  </div>
+    </table>
+    </div>

@@ -1,0 +1,64 @@
+#user {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #user td, #user th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #user tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #user tr:hover {background-color: #ddd;}
+  
+  #user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #map { height: 380px; }
+
+
+.map-maximize {
+  margin: 10px; 
+  /* margin-left: 1150px;  */
+  width: 25px;
+  cursor: pointer;
+}
+
+.map-minimize {
+  /* margin-left: 1150px; */
+  width: 25px;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 100;
+  width: 50px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  right: 50px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

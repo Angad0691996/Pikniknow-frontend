@@ -1,0 +1,98 @@
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: .25rem .5rem;
+  font-weight: bold;
+  font-size: .875rem;
+  line-height: 1.5;
+  cursor: pointer;
+  margin: 0 0.3em
+}
+
+.success:hover {
+  background-color: #40c057;
+  color: #fff;;
+}
+.success {
+  border-color: #40c057;
+  color: #40c057;
+  background-color:#e0fbda;
+}
+.warning:hover {
+  background: #f77e17;
+  color: white;
+}
+.warning {
+  border-color: #f77e17;
+  color: orange;
+  background-color:#feefd0;
+}
+.info {
+  border-color: #2f8be6;
+  color: #2f8be6;
+  background-color:#d5f1fd;
+}
+
+.info:hover {
+  background: #2f8be6;
+  color: white;
+}
+.danger {
+  border-color: #f44336;
+  color: red;
+  background-color:#fee8dc;
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+.box-header{
+  display: flex;
+
+}
+.card-body {
+  padding: 0rem;
+ position: absolute;
+ right: 0%;
+}
+.form-control {
+  padding: 0rem;
+  font-family: auto;
+}
+.box-body {
+  overflow-y: auto;
+  height: 500px;
+}
+.box-body thead th {
+  position: sticky;
+  top: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}

@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Pages({{pageList?.length}})</h3>
+        <div class="card-tools">
+          <i class="fas fa-plus" routerLink="/page/add" data-bs-toggle="tooltip" data-bs-placement="top" title="Add New Page"></i>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>Page Name</th>
+              <th>Title</th>
+              <th>Heading</th>
+              <th>Description</th>
+              <th class="project-actions text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of pageList">
+              <td>{{item.pageName}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.heading}}</td>
+              <td>{{item.description | slice:0:80}}</td>
+              <td class="project-actions text-right">
+                <a class="btn info" routerLink="/page/{{item.pageId}}" href="javascript:void()">
+                  Edit
+                </a>
+                <a class="btn danger" (click)="showPopup(item,'Page Deleted')" href="javascript:void()">
+                  Delete
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>

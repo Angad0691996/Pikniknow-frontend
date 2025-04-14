@@ -1,0 +1,108 @@
+<div *ngIf="showComponent">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/user'] " [queryParams]="{typeId: '00'}">
+      <div class="info-box" style="cursor:pointer;">
+        <span class="info-box-icon bg-info elevation-1"> <i class="fas fa-users"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Total User</span>
+          <span class="info-box-number">
+            {{dashboardCount.allUser}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/user']" [queryParams]="{typeId: '1'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-danger elevation-2"> <i class="fas fa-user-tie"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Admin</span>
+          <span class="info-box-number">{{dashboardCount.admin}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix hidden-md-up"></div>
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/user']" [queryParams]="{typeId: '2'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-success elevation-3"><i class="fas fa-user-edit"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Editor</span>
+          <span class="info-box-number">{{dashboardCount.editor}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/user']" [queryParams]="{typeId: '3'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-warning elevation-4"><i class="fas fa-chalkboard-teacher" style="color: #FFFFFF"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Visitor</span>
+          <span class="info-box-number">{{dashboardCount.users}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-3"  [routerLink]="['/story']" [queryParams]="{typeId: '0'}">
+      <div class="info-box" style="cursor:pointer;">
+        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-mail-bulk"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Total Post</span>
+          <span class="info-box-number">
+            {{dashboardCount.allStory}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/story']" [queryParams]="{typeId: '11'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-danger elevation-2"><i class="fas fa-photo-video"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">New Post</span>
+          <span class="info-box-number">{{dashboardCount.newPost}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix hidden-md-up"></div>
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/story']" [queryParams]="{typeId: '9'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-success elevation-3"><i class="fas fa-vote-yea"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Approved Post</span>
+          <span class="info-box-number">{{dashboardCount.approvedPost}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/story']" [queryParams]="{typeId: '10'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-warning elevation-4"><i class="fas fa-calendar-times" style="color: #FFFFFF"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Rejected Post</span>
+          <span class="info-box-number">{{dashboardCount.rejectedPost}}</span>
+        </div>
+      </div>
+    </div>
+    
+     <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/user-count']" [queryParams]="{typeId: '11'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-street-view"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">User search</span>
+          <span class="info-box-number"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3" [routerLink]="['/story-count']" [queryParams]="{typeId: '12'}">
+      <div class="info-box mb-3" style="cursor:pointer;">
+        <span class="info-box-icon bg-danger elevation-2"><i class="fas fa-map-marked"></i></span> 
+        <div class="info-box-content">
+          <span class="info-box-text">Story search</span>
+          <span class="info-box-number"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+</div>

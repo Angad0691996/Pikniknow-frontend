@@ -1,0 +1,83 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Visitors ({{totalUser}})</h3>
+       
+        <div class="row">
+        <div class="form-group has-search" style="right: 160px;">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input
+                (input)="$event.target.value.length > 3&&filterValue($event.target.value,'searchFreeText') ||$event.target.value.length ==0&&filterValue($event.target.value,'searchFreeText')"
+                [(ngModel)]="search_input" class="form-control" id="search_input" placeholder="Search">
+            </div>
+     </div>
+     <div class="col-md-3">
+        <div class="form-group">
+          <button type="button" (click)="reset()" style="padding: 2px 30px;font-size: 20px;"
+            class="btn info">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="box-body table-responsive" *ngIf="users.length > 0">
+        <table id="example1" class="table table-bordered table-striped">
+    <col style="width:3%">
+	<col style="width:20%">
+	<col style="width:22%">
+    <col style="width:15%">
+    <col style="width:10%">
+            <thead>
+                <tr>
+                    <th>Sr. No</th>
+                    <th style="width: 20%">
+                        Full Name <i class="fas fa-sort" (click)="sortData({active:'userName'})"></i>
+                    </th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th style="min-width: 150px;">Action</th>
+                    <!-- <th>Active</th> -->
+                </tr>
+            </thead>
+            <tr *ngFor=" let item of users;let i = index">
+                <td> {{i+1}}</td>
+                <td>{{item.userName}}</td>
+                <td>{{item.emailId}}</td>
+                <td>{{item.mobileNumber}}</td>
+                <!-- <td>
+                    <i class="fas fa-check-circle" style="color:#1bc943"></i>
+                    <i class="fas fa-times-circle" style="color:#f83245"></i>
+                </td> -->
+               <td>
+                <a class="btn warning" (click)="editUser(item.userId)"
+                    href="javascript:void()">
+                    Edit
+                </a>
+                <a class="btn danger" (click)="showPopup(item,'User Deleted')"
+                    href="javascript:void()">
+                    Delete
+                </a>
+            </td>
+            </tr>
+           
+        </table>
+    </div>
+    <div class="box-body table-responsive" *ngIf="users.length == 0">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Sr. No</th>
+                    <th style="width: 20%">
+                        Full Name <i class="fas fa-sort" (click)="sortData({active:'userName'})"></i>
+                    </th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Active</th>
+                    <!-- <th>Action</th> -->
+                </tr>
+            </thead>
+            <tbody  style="display: flex;width: 100%;justify-content: center;">
+                No Data
+            </tbody>
+          
+           
+        </table>
+    </div>
+</div>

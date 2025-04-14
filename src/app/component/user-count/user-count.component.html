@@ -1,0 +1,51 @@
+<div>
+  <div style="display: flex;justify-content: flex-end;">
+    <div class="tooltip">
+      <img src="assets/img/maximize.png" (click)="Fullscreen()" *ngIf="!isFullScreen" class="map-maximize">
+      <img src="assets/img/minimize.png" (click)="closefullscreen()" *ngIf="isFullScreen" class="map-minimize">
+      <span *ngIf="!isFullScreen" class="tooltiptext">Maximize screen</span>
+      <span *ngIf="isFullScreen" class="tooltiptext">Minimize screen</span>
+
+    </div>
+  </div>
+  <div id="map" [style.height]="height + 'vh'">
+  </div>
+
+  <div class="card">
+    <table class="table table-striped projects">
+      <thead>
+        <tr>
+          <th style="width: 3%">
+            #
+          </th>
+          <th style="width: 50%">
+            State <i class="fas fa-sort" (click)="sortData({active:'state'})"></i>
+          </th>
+          <th style="width: 20%">
+            User Count <i class="fas fa-sort" (click)="sortData({active:'count'})"></i>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of userCount;let i = index">
+          <td>
+            {{i+1}}
+          </td>
+          <td>
+            <a href="javascript:void(0)" (click)="showPopup(item.state)">
+              {{item.state}}
+            </a>
+            <br />
+
+          </td>
+          <td>
+            <strong>{{item.count}}</strong>
+          </td>
+        </tr>
+      </tbody>
+
+
+    </table>
+
+  </div>

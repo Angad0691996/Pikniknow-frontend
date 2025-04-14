@@ -1,0 +1,94 @@
+<!--<div class="card" *ngIf="showComponent">
+  <div class="card-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+    <div [formGroup]="loginFormGroup">
+      <div class="input-group mb-3">
+        <input type="email" [disabled]="postLogin" class="form-control" formControlName="mobileNumber" placeholder="Mobile Number">
+        <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.mobileNumber.errors" class="error error-input">{{loginFormGroup.controls.mobileNumber["errorMessage"]}}</span>
+      </div>
+      <span *ngIf="postLogin">Otp: {{loginFormGroup.value.Otp}} -- TODO</span>
+      <div class="input-group mb-3" *ngIf="postLogin">
+        <input type="text" class="form-control" formControlName="otp" placeholder="Otp">
+        <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.otp.errors" class="error error-input">{{loginFormGroup.controls.otp["errorMessage"]}}</span>
+      </div>
+
+      <div class="row" *ngIf="!postLogin">
+        <div class="col-12">
+          <button type="button" (click)="verifyOtp()" class="btn btn-primary btn-block">Send OTP</button>
+        </div>
+      </div>
+      <div class="row" *ngIf="postLogin">
+        <div class="col-12">
+          <button type="button" (click)="login()" class="btn btn-primary btn-block">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+  <div class="logo1">
+   <img src="assets/img/PikNikTransparent.png"width="40%"height="40%">
+  </div>
+  <br>
+
+   <div class="login-box" *ngIf="showComponent">
+  
+     <div class="login-logo">
+     <a href="javascript:void(0)"><b> PiknikNOW</b> V 1.1</a>
+     </div>
+   <div class="card" [formGroup]="loginFormGroup">
+    <div class="card-body login-card-body" *ngIf="!isForGotPassword">
+      <p class="login-box-msg">Sign in to start your session</p>
+      <div>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" formControlName="email" placeholder="Email Id">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+          <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.email.errors" class="error error-input">{{loginFormGroup.controls.email["errorMessage"]}}</span>
+        </div>
+        <div class="input-group mb-3">
+          <input [type]="fieldTextType ? 'text' : 'password'" class="form-control" placeholder="Password" formControlName="password"/>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <i class="fa" [ngClass]="{ 'fa-eye-slash': !fieldTextType, 'fa-eye': fieldTextType}" (click)="toggleFieldTextType()"></i>
+            </div>
+          </div>
+          <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.password.errors" class="error error-input">{{loginFormGroup.controls.password["errorMessage"]}}</span>
+        </div>
+      </div>
+      <div class="social-auth-links text-center mb-3">
+        <button (click)="login()" class="btn btn-block btn-primary">
+          <i class="fab fa-sign-in mr-2"></i> Login
+        </button>
+        <span (click)="activeForgotPassword()" class="psw"> <a href="#">Forgot password?</a></span>
+      </div>
+    </div>
+    <div class="card-body login-card-body" *ngIf="isForGotPassword">
+      <p class="login-box-msg">Forgot password</p>
+      <div action="../../index3.html">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" formControlName="email" placeholder="Email Id">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+          <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.email.errors" class="error error-input">{{loginFormGroup.controls.email["errorMessage"]}}</span>
+        </div>
+      </div>
+      <div class="social-auth-links text-center mb-3">
+        <button (click)="sendVerificationLink()" class="btn btn-block btn-primary">
+          <i class="fab fa-sign-in mr-2"></i> Submit
+        </button>
+        <span (click)="activeForgotPassword()" class="psw"> <a href="#">Login</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="lab">
+    <p style="font-size:20px;">Powered by<a href="http://www.samsanlabs.com" target="_blank" rel="noopener noreferrer"> Samsan Labs</a>.</p>
+    </div>
+  </div>
+

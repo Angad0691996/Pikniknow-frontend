@@ -1,0 +1,29 @@
+<div class="wrapper" *ngIf="isLogin">
+  <app-top-bar></app-top-bar>
+  <app-side-bar></app-side-bar>
+  <div class="content-wrapper">
+    <app-breadcrumb></app-breadcrumb>
+    <section class="content">
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+        <div id="loader"></div>
+      </div>
+    </section>
+  </div>
+
+  <aside class="control-sidebar control-sidebar-dark"></aside>
+  <app-footer-bar></app-footer-bar>
+</div>
+<div class="login-box" *ngIf="!isLogin">
+  <div class="login-logo">
+    <a href="javascript:void(0)" class="brand-link" style="float:none">
+      <!--<img src="../../../../assets/dist/img/logo.jpeg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8;float:none">-->
+      <!--<span class="brand-text font-weight-light"><b>HCP </b>Board</span>-->
+    </a>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<div id="loader"></div>
+
+

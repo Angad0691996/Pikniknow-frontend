@@ -1,0 +1,35 @@
+
+<div class="login-box" *ngIf="showComponent">
+  <div class="login-logo">
+    <a href="javascript:void(0)"><b>PiknikNow </b> V 1.1</a>
+  </div>
+  <div class="card" [formGroup]="loginFormGroup">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Reset your password</p>
+      <div class="input-group mb-3">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <span class="fas fa-lock"></span>
+          </div>
+        </div>
+        <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.password.errors" class="error error-input">{{loginFormGroup.controls.password["errorMessage"]}}</span>
+      </div>
+      <div class="input-group mb-3">
+        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <span class="fas fa-lock"></span>
+          </div>
+        </div>
+        <span id="exampleInputEmail1-error" *ngIf="loginFormGroup.controls.confirmPassword.errors" class="error error-input">{{loginFormGroup.controls.confirmPassword["errorMessage"]}}</span>
+      </div>
+      <div class="social-auth-links text-center mb-3">
+        <button (click)="resetPassword()" class="btn btn-block btn-primary">
+          <i class="fab fa-sign-in mr-2"></i> Reset Password
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

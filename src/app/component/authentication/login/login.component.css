@@ -1,0 +1,15 @@
+.logo1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+    }
+       span.psw {
+            float: right;
+            padding-top: 16px;
+            ;
+          }
+.lab{
+    position: fixed;
+    right:10px;
+    bottom:0;
+}

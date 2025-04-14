@@ -1,0 +1,72 @@
+<aside class="main-sidebar sidebar-dark-primary bg-side-nav-color elevation-5">
+
+  <a href="javascript:void(0)" class="brand-link">
+    <img src="../../../../assets/dist/img/PikNikFinal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;width:43px;max-height:43px !important">
+    <span class="brand-text font-weight-bolder">PiknikNow </span>
+  </a>
+  <div class="sidebar">
+    <div class="user-panel mt-4 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="../../../../assets/dist/img/PikNikTransparent.png" class="img-circle elevation-5" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="javascript:void(0)" (click)="editUser()" class="d-block">Admin</a>
+      </div>
+    </div>
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a  href="javascript:void(0)" routerLink="/dashboard" [class.active]="activeMenu == 'dashboard'" (click)="changeMenu('dashboard')" class="nav-link">
+            <i class="nav-icon mr-3">
+              <i class="fas fa-tachometer-alt"></i>
+            </i>
+            <p>
+              Dashboard
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" routerLink="/user" [queryParams]="{typeId: '00'}" class="nav-link" [class.active]="activeMenu == 'user'" (click)="changeMenu('user')">
+            <i class="nav-icon mr-3">
+              <i class="fas fa-user-friends"></i>
+            </i>
+            <p>
+              User
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" routerLink="/story" class="nav-link" [class.active]="activeMenu == 'story'" (click)="changeMenu('story')">
+            <i class="nav-icon mr-3">
+              <i class="fas fa-window-restore"></i>
+            </i>
+            <p>
+              Story
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" routerLink="/page" class="nav-link" [class.active]="activeMenu == 'Page'" (click)="changeMenu('Page')">
+            <i class="nav-icon mr-3">
+              <i class="fas fa-copy"></i>
+            </i>
+            <p>
+              Page
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" routerLink="/banner" class="nav-link" [class.active]="activeMenu == 'Banner'" (click)="changeMenu('Banner')">
+            <i class="nav-icon mr-3">
+              <i class="fas fa-ad"></i>
+            </i>
+            <p>
+              Banner
+            </p>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</aside>

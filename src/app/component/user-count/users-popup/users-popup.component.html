@@ -1,0 +1,35 @@
+<div class="card">
+<table  class="table table-striped projects">
+  <thead>
+    <tr>
+      <th style="width: 3%">
+        #
+      </th>
+      <th style="width: 70%">
+        User Details
+      </th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <tr *ngFor="let item of users;let i = index">
+      <td>
+        {{i+1}}
+      </td>
+      <td>
+        <a href="javascript:void(0)">
+          {{item.userName}}
+        </a>
+        <br />
+        <small>
+          <strong>{{item.roleName}} | </strong>  {{item.emailId}} | {{item.mobileNumber}} | {{item.status}}
+        </small>
+      </td>
+    </tr>
+  </tbody>
+  
+
+</table>
+</div>
+
+
