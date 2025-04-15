@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODE_OPTIONS = "--max_old_space_size=4096"
+        NODE_OPTIONS = "--openssl-legacy-provider"
     }
 
     stages {
@@ -27,20 +27,12 @@ pipeline {
         stage('Deploy to Web Server') {
             steps {
                 script {
-                    def outputDir = 'dist/client-app-new' // Adjust this path as needed
+                    def outputDir = 'dist/client-app-new'
                     sh """
-                        echo "🧹 Cleaning existing /var/www/html contents"
                         sudo rm -rf /var/www/html/*
-                        echo "📦 Copying new build from ${outputDir}"
                         sudo cp -r ${outputDir}/* /var/www/html/
                     """
                 }
-            }
-        }
-
-        stage('Post Deployment') {
-            steps {
-                echo "🚀 Deployment Successful! Visit: http://<your-ec2-public-ip>"
             }
         }
     }
