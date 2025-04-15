@@ -14,28 +14,27 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                script {
-                    // Compatibility fix for dependency issues in older Angular
-                    sh 'npm install --legacy-peer-deps'
-                }
+                sh 'npm install --legacy-peer-deps'
             }
         }
 
-        stage('Build Project') {
+        stage('Build Angular App') {
             steps {
-                script {
-                    // Build Angular project (default: output to `dist/client-app-new`)
-                    sh 'npm run build'
-                }
+                sh 'npm run build --prod'
             }
         }
 
-        stage('Deploy to /var/www') {
+        stage('Deploy to Web Server') {
             steps {
                 script {
-                    // Clean and copy build files to Apache/Nginx public folder
-                    sh 'sudo rm -rf /var/www/html/*'
-                    sh 'sudo cp -r dist/* /var/www/html/'
+                    // Adjust if your output folder is dist/<app-name>
+                    def outputDir = 'dist/client-app-new'
+
+                    // Clean and deploy to /var/www/html/
+                    sh """
+                        sudo rm -rf /var/www/html/*
+                        sudo cp -r ${outputDir}/* /var/www/html/
+                    """
                 }
             }
         }
