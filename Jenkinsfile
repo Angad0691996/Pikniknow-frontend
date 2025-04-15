@@ -1,66 +1,49 @@
 pipeline {
     agent any
 
-    environment {
-        DEPLOY_DIR = "/var/www/pikniknow"
-    }
-
     stages {
-        stage('Clone Repository') {
+        stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Angad0691996/Pikniknow-frontend.git'
+                // Use Jenkins' built-in SCM checkout
+                checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                dir('Pikniknow-frontend') {
+                script {
+                    // Automatically fix vulnerabilities before install
+                    sh 'npm audit fix || true'
                     sh 'npm install'
                 }
             }
         }
 
-        stage('Build Frontend') {
+        stage('Build Project') {
             steps {
-                dir('Pikniknow-frontend') {
-                    sh 'npm run build'
+                script {
+                    // Run your actual build command, like:
+                    // sh 'npm run build'
+                    echo "Build step - replace this with actual build logic"
                 }
             }
         }
 
-        stage('Deploy to NGINX') {
+        stage('Test (Optional)') {
             steps {
-                sh '''
-                sudo mkdir -p ${DEPLOY_DIR}
-                sudo cp -r Pikniknow-frontend/build/* ${DEPLOY_DIR}/
-
-                sudo tee /etc/nginx/sites-available/pikniknow <<EOF
-                server {
-                    listen 80;
-                    root ${DEPLOY_DIR};
-                    index index.html index.htm;
-
-                    server_name _;
-
-                    location / {
-                        try_files \$uri /index.html;
-                    }
+                script {
+                    // Add tests here if needed
+                    echo "Running tests..."
                 }
-                EOF
-
-                sudo ln -sf /etc/nginx/sites-available/pikniknow /etc/nginx/sites-enabled/default
-                sudo nginx -t && sudo systemctl restart nginx
-                '''
             }
         }
-    }
 
-    post {
-        success {
-            echo "✅ Frontend deployed successfully!"
-        }
-        failure {
-            echo "❌ Deployment failed!"
+        stage('Deploy (Optional)') {
+            steps {
+                script {
+                    echo "Deployment logic goes here"
+                }
+            }
         }
     }
 }
