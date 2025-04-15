@@ -1,39 +1,46 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_OPTIONS = "--openssl-legacy-provider"
-    }
-
     stages {
-        stage('Checkout Code') {
+        stage('Install NVM and Node.js v14') {
             steps {
-                checkout scm
+                script {
+                    // Install NVM
+                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
+                    
+                    // Load nvm
+                    sh 'source ~/.bashrc'
+                    
+                    // Install Node.js v14 using NVM
+                    sh 'nvm install 14'
+                    sh 'nvm use 14'
+                    
+                    // Verify Node.js version
+                    sh 'node -v'
+                    sh 'npm -v'
+                }
             }
         }
-
         stage('Install Dependencies') {
             steps {
-                // Install the specific TypeScript version before npm install
-                sh 'npm install typescript@4.8.4 --save-dev --legacy-peer-deps'
-                sh 'npm install --legacy-peer-deps'
+                script {
+                    // Run npm install with legacy-peer-deps flag
+                    sh 'npm install --legacy-peer-deps'
+                }
             }
         }
-
         stage('Build Angular App') {
             steps {
-                sh 'npm run build --prod'
+                script {
+                    // Build the Angular app for production
+                    sh 'npm run build --prod'
+                }
             }
         }
-
         stage('Deploy to Web Server') {
             steps {
                 script {
-                    def outputDir = 'dist/client-app-new'
-                    sh """
-                        sudo rm -rf /var/www/html/*
-                        sudo cp -r ${outputDir}/* /var/www/html/
-                    """
+                    // Deployment commands here (e.g., rsync, scp, etc.)
                 }
             }
         }
