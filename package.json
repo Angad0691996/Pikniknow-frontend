@@ -13,9 +13,9 @@
   "dependencies": {
     "@angular/animations": "~8.2.13",
     "@angular/cdk": "~8.2.3",
-    "@angular/common": "~8.2.13",
+    "@angular/common": "^12.0.0",
     "@angular/compiler": "~8.2.13",
-    "@angular/core": "~8.2.13",
+    "@angular/core": "^12.0.0",
     "@angular/forms": "~8.2.13",
     "@angular/localize": "^9.0.0",
     "@angular/material": "^8.2.3",
@@ -33,10 +33,10 @@
     "angular-dual-listbox": "^5.0.1",
     "file-saver": "^2.0.2",
     "ngx-filesaver": "^10.0.0",
-    "rxjs": "^6.5.5",
+    "rxjs": "^6.6.7",
     "sweetalert2": "^9.15.2",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.28",
