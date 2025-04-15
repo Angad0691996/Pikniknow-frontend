@@ -33,7 +33,9 @@ pipeline {
             steps {
                 script {
                     // Run npm install with legacy-peer-deps flag
-                    sh 'npm install --legacy-peer-deps'
+                    sh '''#!/bin/bash
+                    npm install --legacy-peer-deps
+                    '''
                 }
             }
         }
@@ -41,7 +43,9 @@ pipeline {
             steps {
                 script {
                     // Build the Angular app for production
-                    sh 'npm run build --prod'
+                    sh '''#!/bin/bash
+                    npm run build --prod
+                    '''
                 }
             }
         }
@@ -49,6 +53,9 @@ pipeline {
             steps {
                 script {
                     // Deployment commands here (e.g., rsync, scp, etc.)
+                    sh '''#!/bin/bash
+                    echo "Deploying app..."
+                    '''
                 }
             }
         }
