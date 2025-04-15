@@ -10,19 +10,26 @@ pipeline {
                     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
                     '''
                     
-                    // Load nvm
+                    // Ensure .bashrc exists and add NVM initialization
                     sh '''#!/bin/bash
+                    if [ ! -f ~/.bashrc ]; then
+                        touch ~/.bashrc
+                    fi
+                    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
+                    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
                     source ~/.bashrc
                     '''
                     
                     // Install Node.js v14 using NVM
                     sh '''#!/bin/bash
+                    source ~/.bashrc
                     nvm install 14
                     nvm use 14
                     '''
                     
                     // Verify Node.js version
                     sh '''#!/bin/bash
+                    source ~/.bashrc
                     node -v
                     npm -v
                     '''
