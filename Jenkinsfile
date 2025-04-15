@@ -1,10 +1,13 @@
 pipeline {
     agent any
 
+    environment {
+        NODE_OPTIONS = "--max_old_space_size=4096"
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
-                // Use Jenkins' built-in SCM checkout
                 checkout scm
             }
         }
@@ -12,9 +15,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Automatically fix vulnerabilities before install
-                    sh 'npm audit fix || true'
-                    sh 'npm install'
+                    // Compatibility fix for dependency issues in older Angular
+                    sh 'npm install --legacy-peer-deps'
                 }
             }
         }
@@ -22,26 +24,18 @@ pipeline {
         stage('Build Project') {
             steps {
                 script {
-                    // Run your actual build command, like:
-                    // sh 'npm run build'
-                    echo "Build step - replace this with actual build logic"
+                    // Build Angular project (default: output to `dist/client-app-new`)
+                    sh 'npm run build'
                 }
             }
         }
 
-        stage('Test (Optional)') {
+        stage('Deploy to /var/www') {
             steps {
                 script {
-                    // Add tests here if needed
-                    echo "Running tests..."
-                }
-            }
-        }
-
-        stage('Deploy (Optional)') {
-            steps {
-                script {
-                    echo "Deployment logic goes here"
+                    // Clean and copy build files to Apache/Nginx public folder
+                    sh 'sudo rm -rf /var/www/html/*'
+                    sh 'sudo cp -r dist/* /var/www/html/'
                 }
             }
         }
