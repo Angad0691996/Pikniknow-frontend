@@ -6,18 +6,26 @@ pipeline {
             steps {
                 script {
                     // Install NVM
-                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
+                    sh '''#!/bin/bash
+                    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+                    '''
                     
                     // Load nvm
-                    sh 'source ~/.bashrc'
+                    sh '''#!/bin/bash
+                    source ~/.bashrc
+                    '''
                     
                     // Install Node.js v14 using NVM
-                    sh 'nvm install 14'
-                    sh 'nvm use 14'
+                    sh '''#!/bin/bash
+                    nvm install 14
+                    nvm use 14
+                    '''
                     
                     // Verify Node.js version
-                    sh 'node -v'
-                    sh 'npm -v'
+                    sh '''#!/bin/bash
+                    node -v
+                    npm -v
+                    '''
                 }
             }
         }
