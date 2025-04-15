@@ -27,15 +27,20 @@ pipeline {
         stage('Deploy to Web Server') {
             steps {
                 script {
-                    // Adjust if your output folder is dist/<app-name>
-                    def outputDir = 'dist/client-app-new'
-
-                    // Clean and deploy to /var/www/html/
+                    def outputDir = 'dist/client-app-new' // Adjust this path as needed
                     sh """
+                        echo "🧹 Cleaning existing /var/www/html contents"
                         sudo rm -rf /var/www/html/*
+                        echo "📦 Copying new build from ${outputDir}"
                         sudo cp -r ${outputDir}/* /var/www/html/
                     """
                 }
+            }
+        }
+
+        stage('Post Deployment') {
+            steps {
+                echo "🚀 Deployment Successful! Visit: http://<your-ec2-public-ip>"
             }
         }
     }
