@@ -14,6 +14,8 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                // Install the specific TypeScript version before npm install
+                sh 'npm install typescript@4.8.4 --save-dev --legacy-peer-deps'
                 sh 'npm install --legacy-peer-deps'
             }
         }
